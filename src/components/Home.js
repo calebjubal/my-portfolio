@@ -23,8 +23,8 @@ return (
             <div className="card">
                 <img src="/avatar.jpg" alt="" />
                 <div className="info">
-                    <div>Developer</div>
-                    <div>India</div>
+                    <div>Full-Stack Developer</div>
+                    <div>New Delhi, India</div>
                     <div>16/06/2005</div>
                     <div>Male</div>
                 </div>
