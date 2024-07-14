@@ -6,24 +6,24 @@ import CustomHook from './CustomHook';
 function Projects() {
 const [listProjects] = useState([
   {
-    name: 'Project Real-time chating in website',
-    des: 'Eu voluptate sit do labore consectetur in ad esse qui laborum ad eiusmod. Esse ea velit culpa exercitation anim enim reprehenderit. Fugiat nostrud non dolore aliquip quis in ea amet duis.',
-    mission: 'Back-end Developer, system analysis and design',
+    name: 'Just Chat : Real-time chating in website',
+    des: 'A MERN stack project enabling seamless real-time messaging within a website, providing users with instant and interactive communication capabilities.',
+    mission: 'Full-Stack Developer, system analysis and design',
     language: 'HTML5, CSS3, React JS, SockerIO,...',
     images: '/project1.PNG'
   },
   {
-    name: 'Project Real-time chating in website',
-    des: 'Eu voluptate sit do labore consectetur in ad esse qui laborum ad eiusmod. Esse ea velit culpa exercitation anim enim reprehenderit. Fugiat nostrud non dolore aliquip quis in ea amet duis.',
-    mission: 'Back-end Developer, system analysis and design',
-    language: 'HTML5, CSS3, React JS, SockerIO,...',
+    name: 'Snippet Bro',
+    des: 'A Next.js based application which helps you to search and save your favorite snippets.',
+    mission: 'Full-Stack Developer, use of Next framework and design',
+    language: 'Next.js, tailwindCSS, Typescript, MongoDB, Vercel...',
     images: '/project2.PNG'
   },
   {
-    name: 'Project Real-time chating in website',
-    des: 'Eu voluptate sit do labore consectetur in ad esse qui laborum ad eiusmod. Esse ea velit culpa exercitation anim enim reprehenderit. Fugiat nostrud non dolore aliquip quis in ea amet duis.',
-    mission: 'Back-end Developer, system analysis and design',
-    language: 'HTML5, CSS3, React JS, SockerIO,...',
+    name: 'Qala: An ecommerce website which acts as a art marketplace',
+    des: 'An e-commerce website built on the MERN stack, Qala serves as a vibrant marketplace for artists to showcase and sell their artwork directly to buyers.',
+    mission: 'Back-end Developer, some part of the frontend design',
+    language: 'HTML5, CSS3, Express JS, React JS,...',
     images: '/project2.PNG'
   },
 

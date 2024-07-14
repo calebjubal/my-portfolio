@@ -12,7 +12,10 @@ return (
             </div>
             <div className="des">
                 {/* 30 */}
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores officiis beatae repellendus rem ullam, ipsam nemo dolorem dolorum illo laborum. Ea sed dolor ab qui, doloremque accusantium esse blanditiis possimus!
+                
+                As a dedicated developer, I create impactful and user-friendly digital experiences with expertise in HTML, CSS, JavaScript, React JS, and Python. Committed to continuous learning, I strive to serve others through my talents.
+
+                "In everything, set them an example by doing what is good." This principle guides me to deliver high-quality solutions that benefit users.
             </div>
             
             <a href="/democv.pdf" target="_blank" rel="noopener noreferrer" className='animation active '>
