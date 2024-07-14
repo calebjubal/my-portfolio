@@ -23,6 +23,7 @@ return (
             </a>
         </div>
         <div className="avatar">
+            <a href="https://www.linkedin.com/in/caleb-chandrasekar-b8521026b/">
             <div className="card">
                 <img src="/avatar.jpg" alt="" />
                 <div className="info">
@@ -32,6 +33,7 @@ return (
                     <div>New Delhi, India</div>
                 </div>
             </div>
+            </a>
         </div>
     </section>
     )
