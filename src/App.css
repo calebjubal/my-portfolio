@@ -295,26 +295,30 @@ section.projects{
     }
 }
 
-section.contacts{
+section.contacts {
     padding-bottom: 220px;
-    & .title{
+    & .title {
         text-align: center;
         font-size: 5vw;
         font-family: 'MuseoModerno', system-ui;
     }
-    & .des{
+    & .des {
         color: #eee5;
         text-align: center;
         max-width: 500px;
         margin: auto;
     }
-    & .list{
+    & .list {
         text-align: center;
-        & .item{
+        & .item {
             margin-top: 50px;
+        }
+        & a {
+            color: white !important;
         }
     }
 }
+
 
 /* animation */
 .animation{
