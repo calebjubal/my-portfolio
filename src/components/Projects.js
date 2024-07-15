@@ -6,10 +6,9 @@ import CustomHook from './CustomHook';
 function Projects() {
 const [listProjects] = useState([
   {
-    name: 'Just Chat : Real-time chating in website',
-    des: 'A MERN stack project enabling seamless real-time messaging within a website, providing users with instant and interactive communication capabilities.',
-    mission: 'Full-Stack Developer, system analysis and design',
-    language: 'HTML5, CSS3, React JS, SockerIO,...',
+    name: 'Stock Price Prediction',
+    des: 'Develop a machine learning model to accurately forecast future stock prices using historical market data, enabling investors to make informed trading decisions.',
+    language: 'Python, Numpy, Pandas....',
     images: '/project1.PNG'
   },
   {
@@ -24,7 +23,7 @@ const [listProjects] = useState([
     des: 'An e-commerce website built on the MERN stack, Qala serves as a vibrant marketplace for artists to showcase and sell their artwork directly to buyers.',
     mission: 'Back-end Developer, some part of the frontend design',
     language: 'HTML5, CSS3, Express JS, React JS,...',
-    images: '/project2.PNG'
+    images: '/project3.PNG'
   },
 
 ]);
