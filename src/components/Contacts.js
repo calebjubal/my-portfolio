@@ -41,7 +41,7 @@ function Contacts() {
       </div>
       <div className="des" ref={(el) => el && divs.current.push(el)}>
         {/* 20 */}
-        Got questions or projects? Hit me up! With my skills and determination, LambdaTest will be lucky to have me soon. Let's make some tech magic together!
+        Got questions or projects? Hit me up! With my skills and determination. Let's make some tech magic together!
       </div>
       <div className="list" ref={(el) => el && divs.current.push(el)}>
         {
