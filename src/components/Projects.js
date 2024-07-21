@@ -23,7 +23,7 @@ const [listProjects] = useState([
     des: 'An e-commerce website built on the MERN stack, Qala serves as a vibrant marketplace for artists to showcase and sell their artwork directly to buyers.',
     mission: 'Back-end Developer, some part of the frontend design',
     language: 'HTML5, CSS3, Express JS, React JS,...',
-    images: '/project3.PNG'
+    images: '/Screenshot 2024-07-21 200325.png'
   },
 
 ]);
