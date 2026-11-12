@@ -4,6 +4,7 @@ import StoryNavigation from "./StoryNavigation";
 import content from "./content.json";
 import Editor from "./Editor";
 import Header from "./Header";
+import TechnologyStickers from "./TechnologyStickers";
 import ContactActions from "./ContactActions";
 import Icon from "./Icon";
 import SvgText, { StarMark, ArrowMark } from "./SvgText";
@@ -121,16 +122,7 @@ function App() {
             </figure>
           </div>
         </section>
-        <div className="skill-strip">
-          <div className="wrap">
-            <span className="eyebrow">TOOLS OF THE TRADE</span>
-            <div>
-              {skills.filter(Boolean).map((skill) => (
-                <span key={skill}>{skill}</span>
-              ))}
-            </div>
-          </div>
-        </div>
+        <TechnologyStickers skills={skills} projects={projects} />
         <section id="work" className="section wrap">
           <div className="section-heading">
             <div>
@@ -189,12 +181,13 @@ function App() {
                   {safeLink(p.image) && (
                     <img
                       src={safeLink(p.image)}
-                      alt={`${p.title} interface`}
+                      alt={p.imageAlt || `${p.title} project overview`}
                       loading="lazy"
                     />
                   )}
                   <span className="image-caption">
-                    BUILD NOTES / {number(projects.indexOf(p) + 1)}
+                    {p.imageCaption ||
+                      `BUILD NOTES / ${number(projects.indexOf(p) + 1)}`}
                   </span>
                 </div>
                 <div className="project-copy">
@@ -207,12 +200,11 @@ function App() {
                     <div>
                       <dt>BUILT WITH</dt>
                       <dd className="tags">
-                        {p.tags
-                          .split(",")
-                          .filter(Boolean)
-                          .map((tag) => (
-                            <span key={tag}>{tag.trim()}</span>
-                          ))}
+                        <TechnologyStickers
+                          skills={p.tags.split(",")}
+                          projects={projects}
+                          compact
+                        />
                       </dd>
                     </div>
                   </dl>

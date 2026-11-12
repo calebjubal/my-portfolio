@@ -8,6 +8,8 @@ const fields = {
     "role",
     "tags",
     "image",
+    "imageAlt",
+    "imageCaption",
     "url",
     "github",
   ],
@@ -18,6 +20,8 @@ const labels = {
   url: "Website or credential URL",
   github: "Source code URL",
   image: "Image path or URL",
+  imageAlt: "Image description",
+  imageCaption: "Image caption",
   tags: "Technologies (comma separated)",
   period: "Dates",
   credential: "Credential ID",
@@ -186,12 +190,12 @@ export default function Editor({ data, onPreview, onClose }) {
                     {labels[key] || key}
                     {key === "description" ? (
                       <textarea
-                        value={entry[key]}
+                        value={entry[key] || ""}
                         onChange={(e) => update(index, key, e.target.value)}
                       />
                     ) : (
                       <input
-                        value={entry[key]}
+                        value={entry[key] || ""}
                         onChange={(e) => update(index, key, e.target.value)}
                       />
                     )}

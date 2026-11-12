@@ -30,7 +30,7 @@ The content editor is a local drafting tool, not an authenticated CMS: visitors 
 
 ## Content provenance and remaining details
 
-- Original three projects, project screenshots, portrait, résumé, and email preserved from the existing repository. Project demo/source URLs were absent and remain blank.
+- Featured projects are now AEGIS, Satoshi Trace, and Voice RAG College Counsellor, selected after reviewing public GitHub documentation and source. See [PROJECTS.md](PROJECTS.md) for the selection rationale, sources, logo attribution, and count definition. Portrait, résumé, and email are retained.
 - Six named certificates and credential IDs transcribed from the public LinkedIn profile at https://in.linkedin.com/in/caleb-chandrasekar. Direct credential URLs were not exposed; add those in the editor when available.
 - Eascode's public company announcement at https://in.linkedin.com/company/eascodesolutions/ confirms a summer internship in 2026 for an LLM migration project. The public profile hides other job titles and dates; no additional roles or dates have been invented.
 - Existing résumé PDF has been retained; review its contents before sharing.
@@ -52,3 +52,7 @@ Lucide also provides interface icons for navigation, search, résumé and projec
 ## Mobile layout
 
 Phones use an expandable, labeled navigation menu; Escape closes it and returns focus to the toggle. Text and editor inputs stay readable, contact actions stack, and compact grids become a single-column reading flow. The content studio uses the dynamic viewport height, locks background scrolling while open, and keeps its close control visible. Long editable titles, emails, and credentials wrap without hiding horizontal overflow.
+
+## Technology stickers
+
+The toolkit and project stacks use bundled Devicon logos with white sticker borders and layered shadows. Hover, focus, or tap a sticker for its name and featured-project count. Counts are computed from project tags, not hardcoded or presented as lifetime totals. Add image descriptions/captions in the project editor to keep illustrations and screenshots clearly distinguished. Full provenance: [PROJECTS.md](PROJECTS.md).
