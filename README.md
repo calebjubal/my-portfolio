@@ -1,6 +1,6 @@
 # Caleb's portfolio
 
-A dark, chapter-based React portfolio with electric lime and violet accents, bold typography, projects, experience, certificates, and a browser-based content studio.
+A dark, chapter-based React portfolio with orange and gold accents, bold typography, projects, experience, certificates, and a browser-based content studio.
 
 ## Run locally
 
