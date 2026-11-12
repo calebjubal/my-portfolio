@@ -3,6 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 import StoryNavigation from "./StoryNavigation";
 import content from "./content.json";
 import Editor from "./Editor";
+import ContactActions from "./ContactActions";
 import Icon from "./Icon";
 import SvgText, { StarMark, ArrowMark } from "./SvgText";
 import "./App.css";
@@ -404,14 +405,7 @@ function App() {
                 <br />
                 Or a conversation that leads somewhere.
               </p>
-              <div>
-                <a className="button primary" href={`mailto:${profile.email}`}>
-                  Let’s talk <Icon name="Mail" />
-                </a>
-                <a className="email" href={`mailto:${profile.email}`}>
-                  {profile.email}
-                </a>
-              </div>
+              <ContactActions email={profile.email} name={profile.name} />
             </div>
           </div>
         </section>

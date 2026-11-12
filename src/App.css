@@ -1572,4 +1572,20 @@ footer > a,
   height: 1em;
   stroke-width: 0.8;
 }
-.editor .editor-actions .button{flex:1 1 160px;min-width:min(100%,160px);white-space:normal;line-height:1.5;justify-content:center}
+.editor .editor-actions .button {
+  flex: 1 1 160px;
+  min-width: min(100%, 160px);
+  white-space: normal;
+  line-height: 1.5;
+  justify-content: center;
+}
+.contact-email-actions .gmail-link {
+  display: flex;
+  width: fit-content;
+  margin-top: 16px;
+  color: var(--paper);
+  gap: 10px;
+}
+.contact-email-actions .email {
+  margin-top: 16px;
+}
