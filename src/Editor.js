@@ -30,8 +30,11 @@ export default function Editor({ data, onPreview, onClose }) {
   useEffect(() => {
     const element = dialog.current,
       previous = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     element.showModal();
     return () => {
+      document.body.style.overflow = previousOverflow;
       previous?.focus();
     };
   }, []);
@@ -87,11 +90,16 @@ export default function Editor({ data, onPreview, onClose }) {
     }
   }
   return (
-    <dialog ref={dialog} className="editor" onCancel={onClose}>
+    <dialog
+      ref={dialog}
+      className="editor"
+      aria-labelledby="content-studio-title"
+      onCancel={onClose}
+    >
       <div className="editor-top">
         <div>
           <p className="eyebrow">YOUR PORTFOLIO, YOUR WORDS</p>
-          <h2>
+          <h2 id="content-studio-title">
             Content studio<span>.</span>
           </h2>
         </div>
