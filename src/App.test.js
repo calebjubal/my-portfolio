@@ -10,10 +10,12 @@ test("filters projects by category and search and handles empty results", () => 
   render(<App />);
   fireEvent.click(screen.getByRole("button", { name: "AI & data" }));
   expect(
-    screen.getByRole("heading", { name: "Stock Price Prediction" }),
+    screen.getByRole("heading", { name: "Voice RAG College Counsellor" }),
   ).toBeInTheDocument();
   expect(
-    screen.queryByRole("heading", { name: "Snippet Bro" }),
+    screen.queryByRole("heading", {
+      name: "Satoshi Trace — offline investigations",
+    }),
   ).not.toBeInTheDocument();
   fireEvent.change(screen.getByRole("textbox", { name: "Search projects" }), {
     target: { value: "no-match" },
