@@ -1,0 +1,120 @@
+{
+  "profile": {
+    "name": "Caleb Chandrasekar",
+    "role": "AI/ML engineer & full-stack developer",
+    "location": "New Delhi, India",
+    "intro": "I build thoughtful digital experiences — from useful web applications to intelligent systems. Curious by nature. Driven by purpose.",
+    "email": "chandrasekarcaleb@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/caleb-chandrasekar/",
+    "github": "https://github.com/calebjubal",
+    "portrait": "/avatar.jpg",
+    "resume": "/democv.pdf"
+  },
+  "skills": [
+    "Python",
+    "React",
+    "Next.js",
+    "JavaScript",
+    "TypeScript",
+    "HTML & CSS",
+    "Machine learning",
+    "NumPy",
+    "Pandas",
+    "C++"
+  ],
+  "projects": [
+    {
+      "id": "snippet-bro",
+      "title": "Snippet Bro",
+      "category": "Web development",
+      "description": "A home for the code you want to keep. Search and save your favorite snippets in a full-stack web application.",
+      "role": "Full-stack development & interface design",
+      "tags": "Next.js, TypeScript, Tailwind CSS, MongoDB",
+      "image": "/project2.PNG",
+      "url": "",
+      "github": ""
+    },
+    {
+      "id": "stock-prediction",
+      "title": "Stock Price Prediction",
+      "category": "AI & data",
+      "description": "Exploring historical market data with a machine learning model for forecasting stock prices.",
+      "role": "Machine learning & data analysis",
+      "tags": "Python, NumPy, Pandas",
+      "image": "/project1.PNG",
+      "url": "",
+      "github": ""
+    },
+    {
+      "id": "qala",
+      "title": "Qala — an art marketplace",
+      "category": "Web development",
+      "description": "Connecting artists and art lovers through an e-commerce marketplace for showcasing and selling original artwork.",
+      "role": "Backend development & frontend contributions",
+      "tags": "React, Express, MongoDB, CSS",
+      "image": "/Screenshot 2024-07-21 200325.png",
+      "url": "",
+      "github": ""
+    }
+  ],
+  "experience": [
+    {
+      "id": "eascode",
+      "title": "Summer Intern",
+      "company": "Eascode",
+      "period": "Summer 2026",
+      "description": "Joined the team for an LLM migration project.",
+      "url": "https://www.linkedin.com/company/eascodesolutions/"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "postman",
+      "title": "Postman API Fundamentals Student Expert",
+      "issuer": "Canvas Credentials (Badgr)",
+      "date": "July 2024",
+      "credential": "66a6a8d1b1bbd519a44efe39",
+      "url": ""
+    },
+    {
+      "id": "webdev",
+      "title": "Web Dev Bootcamp",
+      "issuer": "Udemy",
+      "date": "July 2024",
+      "credential": "UC-2a9e0920-9190-451d-b462-ce12e21c0631",
+      "url": ""
+    },
+    {
+      "id": "visualization",
+      "title": "Data Visualization with Python by IBM",
+      "issuer": "Cognitive Class",
+      "date": "January 2024",
+      "credential": "965519c964144a3981fabe9350b2fa1a",
+      "url": ""
+    },
+    {
+      "id": "cpp",
+      "title": "Programming in C++ Certification",
+      "issuer": "Scaler",
+      "date": "January 2024",
+      "credential": "",
+      "url": ""
+    },
+    {
+      "id": "analysis",
+      "title": "Data Analysis in Python by IBM",
+      "issuer": "Cognitive Class",
+      "date": "November 2023",
+      "credential": "11418cc2710e4304a148d9fa56b54e43",
+      "url": ""
+    },
+    {
+      "id": "python",
+      "title": "Python (Basic)",
+      "issuer": "HackerRank",
+      "date": "October 2023",
+      "credential": "F00FCF7DB55E",
+      "url": ""
+    }
+  ]
+}
