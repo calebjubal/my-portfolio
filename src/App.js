@@ -1,10 +1,13 @@
 import { useState } from "react";
+import StoryNavigation from "./StoryNavigation";
 import content from "./content.json";
 import Editor from "./Editor";
+import SvgText, { StarMark, ArrowMark } from "./SvgText";
 import "./App.css";
 export const safeLink = (value) =>
   /^(https?:\/\/|mailto:|\/[^/])/.test(value || "") ? value : undefined;
-const Arrow = () => <span aria-hidden="true">↗</span>;
+const Arrow = ArrowMark;
+const number = (n) => String(n).padStart(2, "0");
 function App() {
   const [data, setData] = useState(content),
     [editing, setEditing] = useState(false),
@@ -25,74 +28,110 @@ function App() {
       </a>
       <header className="header wrap">
         <a className="brand" href="#home" aria-label="Caleb home">
-          c<span>.</span>
+          CC<span>+</span>
         </a>
+        <span className="header-caption">
+          A PERSONAL FIELD GUIDE
+          <br />
+          TO THINGS I BUILD.
+        </span>
         <nav aria-label="Main navigation">
-          <a href="#work">Work</a>
-          <a href="#experience">Experience</a>
-          <a href="#certificates">Certificates</a>
+          <a href="#work">Selected work</a>
+          <a href="#experience">The journey</a>
+          <a href="#contact">
+            Get in touch <Arrow />
+          </a>
         </nav>
-        <a className="nav-contact" href="#contact">
-          Let’s talk <Arrow />
-        </a>
       </header>
+      <StoryNavigation
+        revision={`${category}:${query}:${projects.length}:${certificates.length}:${experience.length}`}
+      />
       <main id="main">
         <section id="home" className="hero wrap">
-          <div>
-            <p className="eyebrow">
-              <span className="dot" />
-              {profile.location} · Building with purpose
-            </p>
-            <h1>
-              A little curiosity.
-              <br />A lot of <em>possibility.</em>
-            </h1>
+          <div className="hero-top">
+            <p className="eyebrow">PORTFOLIO / VOL. 01</p>
+            <p className="eyebrow">{profile.location}</p>
+          </div>
+          <h1 className="name-heading" aria-label={profile.name}>
+            <span className="hero-line name-first">
+              <SvgText text={profile.name.split(" ")[0].toUpperCase()} />
+              <span className="name-star">
+                <StarMark />
+              </span>
+            </span>
+            <span className="hero-line surname">
+              <SvgText
+                text={profile.name.split(" ").slice(1).join(" ").toUpperCase()}
+              />
+            </span>
+          </h1>
+          <div className="hero-bottom">
+            <span className="index-label">01 — THE INTRODUCTION</span>
             <p className="intro">
-              Hey, I’m {profile.name.split(" ")[0]} — {profile.role}.
+              {profile.role}.<br />
+              <span>Turning “I wonder” into “it works.”</span>
             </p>
-            <p className="muted hero-description">{profile.intro}</p>
-            <div className="actions">
-              <a className="button primary" href="#work">
-                Explore my work ↓
-              </a>
-              {safeLink(profile.resume) && (
+            <a
+              className="round-link"
+              href="#work"
+              aria-label="Explore selected work"
+            >
+              <span>
+                SCROLL TO
+                <br />
+                EXPLORE
+              </span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <div className="intro-board">
+            <div className="board-statement">
+              <span className="eyebrow">THE MINDSET</span>
+              <h2>
+                Make things.
+                <br />
+                Break things.
+                <br />
+                <em>Figure it out.</em>
+              </h2>
+            </div>
+            <div className="board-bio">
+              <p className="hero-description">{profile.intro}</p>
+              <div className="actions">
+                {safeLink(profile.resume) && (
+                  <a
+                    className="text-link"
+                    href={safeLink(profile.resume)}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Read my résumé <Arrow />
+                  </a>
+                )}
                 <a
                   className="text-link"
-                  href={safeLink(profile.resume)}
+                  href={safeLink(profile.github)}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  View résumé <Arrow />
+                  Inside my GitHub <Arrow />
                 </a>
-              )}
-            </div>
-            <div className="hero-note">
-              <span>01 / THE INTRODUCTION</span>
-              <span>Code with care. Create with intent.</span>
-            </div>
-          </div>
-          <div className="portrait-area">
-            <div className="orbit" aria-hidden="true" />
-            <div className="portrait-frame">
-              <img src={safeLink(profile.portrait)} alt={profile.name} />
-              <span className="photo-label">THE HUMAN BEHIND THE CODE</span>
-            </div>
-            <div className="floating-note">
-              <span aria-hidden="true">✳</span>
-              <div>
-                Always learning.
-                <br />
-                <strong>Always building.</strong>
               </div>
+              <p className="bio-note">
+                A student’s curiosity.
+                <br />
+                An engineer’s urge to make it work.
+              </p>
             </div>
-            <span className="portrait-index" aria-hidden="true">
-              &lt; hello, world /&gt;
-            </span>
+            <figure className="portrait">
+              <img src={safeLink(profile.portrait)} alt={profile.name} />
+              <figcaption>THE PERSON BEHIND THE PULL REQUESTS.</figcaption>
+            </figure>
           </div>
         </section>
         <div className="skill-strip">
           <div className="wrap">
-            <span className="eyebrow">MY TOOLKIT</span>
+            <span className="eyebrow">TOOLS OF THE TRADE</span>
             <div>
               {skills.filter(Boolean).map((skill) => (
                 <span key={skill}>{skill}</span>
@@ -103,15 +142,17 @@ function App() {
         <section id="work" className="section wrap">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">02 / SELECTED WORK</p>
+              <p className="eyebrow">02 — A FEW EXPERIMENTS THAT STUCK</p>
               <h2>
-                Ideas, brought to life<span>.</span>
+                Selected
+                <br />
+                <em>work.</em>
+                <sup>({number(projects.length)})</sup>
               </h2>
             </div>
             <p className="muted">
-              A collection of things I’ve built,
-              <br />
-              explored, and learned along the way.
+              Small ideas. Real problems.
+              <br />A little more learned with every build.
             </p>
           </div>
           <div className="work-controls">
@@ -134,16 +175,25 @@ function App() {
               <span aria-hidden="true">⌕</span>
               <input
                 aria-label="Search projects"
-                placeholder="Find a project…"
+                placeholder="Search the index"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
             </label>
           </div>
           <div className="project-grid">
-            {visible.map((p, index) => (
+            {visible.map((p) => (
               <article className="project" key={p.id}>
-                <div className={`project-image tone-${index % 3}`}>
+                <div className="project-heading">
+                  <span className="project-number">
+                    /{number(projects.indexOf(p) + 1)}
+                  </span>
+                  <h3>{p.title}</h3>
+                  <span className="project-category">{p.category}</span>
+                </div>
+                <div
+                  className={`project-image tone-${projects.indexOf(p) % 3}`}
+                >
                   {safeLink(p.image) && (
                     <img
                       src={safeLink(p.image)}
@@ -151,39 +201,51 @@ function App() {
                       loading="lazy"
                     />
                   )}
-                  <span className="project-number">
-                    0{projects.indexOf(p) + 1}
+                  <span className="image-caption">
+                    BUILD NOTES / {number(projects.indexOf(p) + 1)}
                   </span>
                 </div>
-                <div className="project-meta">
-                  <span>{p.category}</span>
-                  <span>{p.role}</span>
-                </div>
-                <h3>{p.title}</h3>
-                <p className="muted">{p.description}</p>
-                <div className="tags">
-                  {p.tags
-                    .split(",")
-                    .filter(Boolean)
-                    .map((tag) => (
-                      <span key={tag}>{tag.trim()}</span>
-                    ))}
-                </div>
-                <div className="project-links">
-                  {safeLink(p.url) && (
-                    <a href={safeLink(p.url)} target="_blank" rel="noreferrer">
-                      Live project <Arrow />
-                    </a>
-                  )}
-                  {safeLink(p.github) && (
-                    <a
-                      href={safeLink(p.github)}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Source code <Arrow />
-                    </a>
-                  )}
+                <div className="project-copy">
+                  <p className="muted">{p.description}</p>
+                  <dl>
+                    <div>
+                      <dt>MY PART</dt>
+                      <dd>{p.role}</dd>
+                    </div>
+                    <div>
+                      <dt>BUILT WITH</dt>
+                      <dd className="tags">
+                        {p.tags
+                          .split(",")
+                          .filter(Boolean)
+                          .map((tag) => (
+                            <span key={tag}>{tag.trim()}</span>
+                          ))}
+                      </dd>
+                    </div>
+                  </dl>
+                  <div className="project-links">
+                    {safeLink(p.url) && (
+                      <a
+                        className="text-link"
+                        href={safeLink(p.url)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Visit project <Arrow />
+                      </a>
+                    )}
+                    {safeLink(p.github) && (
+                      <a
+                        className="text-link"
+                        href={safeLink(p.github)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        View source <Arrow />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}
@@ -193,118 +255,144 @@ function App() {
               No projects match. Try another search or category.
             </p>
           )}
+          <a className="chapter-next" href="#experience">
+            <span>THE NEXT PAGE</span>What happens beyond the code?
+            <span>↓</span>
+          </a>
         </section>
         <section id="experience" className="experience-section">
-          <div className="wrap experience-layout">
-            <div>
-              <p className="eyebrow">03 / THE JOURNEY</p>
-              <h2>
-                Learning by
-                <br />
-                <em>doing.</em>
-              </h2>
-              <p className="muted">
-                Real teams. New challenges.
-                <br />
-                Room to grow with every step.
-              </p>
-              <a
-                className="text-link"
-                href={safeLink(profile.linkedin)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                More on LinkedIn <Arrow />
-              </a>
+          <div className="wrap">
+            <div className="experience-top">
+              <p className="eyebrow">03 — LEARNING IN THE REAL WORLD</p>
+              <span className="paper-label">FIELD NOTES / EXPERIENCE</span>
             </div>
-            <div className="timeline">
-              {experience.map((job) => (
-                <article key={job.id}>
-                  <p className="eyebrow">{job.period}</p>
-                  <h3>{job.title}</h3>
-                  <p className="company">{job.company}</p>
-                  <p className="muted">{job.description}</p>
-                  {safeLink(job.url) && (
-                    <a
-                      className="text-link"
-                      href={safeLink(job.url)}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      About the company <Arrow />
-                    </a>
-                  )}
-                </article>
-              ))}
-              {!experience.length && (
+            <div className="experience-layout">
+              <div>
+                <h2>
+                  Outside the
+                  <br />
+                  <em>classroom.</em>
+                </h2>
                 <p className="muted">
-                  The next chapter is taking shape. Follow my journey on
-                  LinkedIn.
+                  New teams, different perspectives,
+                  <br />
+                  and problems a tutorial can’t prepare you for.
                 </p>
-              )}
+                <a
+                  className="text-link"
+                  href={safeLink(profile.linkedin)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  The full story on LinkedIn <Arrow />
+                </a>
+              </div>
+              <div className="timeline">
+                {experience.map((job) => (
+                  <article key={job.id}>
+                    <p className="eyebrow">{job.period}</p>
+                    <h3>{job.title}</h3>
+                    <p className="company">{job.company}</p>
+                    <p className="muted">{job.description}</p>
+                    {safeLink(job.url) && (
+                      <a
+                        className="text-link"
+                        href={safeLink(job.url)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        About the team <Arrow />
+                      </a>
+                    )}
+                  </article>
+                ))}
+                {!experience.length && (
+                  <p className="muted">
+                    The next chapter is taking shape. Follow my journey on
+                    LinkedIn.
+                  </p>
+                )}
+              </div>
             </div>
+            <span className="paper-footer">
+              STILL LEARNING. ALWAYS WILL BE.
+            </span>
           </div>
         </section>
         <section id="certificates" className="section wrap">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">04 / NEVER STOP LEARNING</p>
+              <p className="eyebrow">04 — KEEP THE CURIOSITY</p>
               <h2>
-                Curiosity, with credentials<span>.</span>
+                More tools.
+                <br />
+                <em>More possibilities.</em>
               </h2>
             </div>
-            <span className="count">
-              {certificates.length.toString().padStart(2, "0")} CERTIFICATES
-            </span>
+            <p className="muted">
+              A growing collection of things
+              <br />I wanted to understand better.
+            </p>
           </div>
           <div className="certificate-grid">
-            {certificates.map((cert) => (
+            {certificates.map((cert, index) => (
               <article className="certificate" key={cert.id}>
-                <span className="cert-icon" aria-hidden="true">
-                  ✧
-                </span>
+                <span className="cert-index">{number(index + 1)}</span>
                 <div>
-                  <p className="eyebrow">
-                    {cert.issuer} · {cert.date}
-                  </p>
                   <h3>{cert.title}</h3>
-                  {cert.credential && (
-                    <p className="credential">ID: {cert.credential}</p>
-                  )}
-                  {safeLink(cert.url) && (
-                    <a
-                      className="text-link"
-                      href={safeLink(cert.url)}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      View credential <Arrow />
-                    </a>
-                  )}
+                  <p className="credential">
+                    {cert.issuer}
+                    {cert.credential && <span> / ID: {cert.credential}</span>}
+                  </p>
                 </div>
+                <span className="cert-date">{cert.date}</span>
+                {safeLink(cert.url) && (
+                  <a
+                    className="credential-link"
+                    aria-label={`View ${cert.title} credential`}
+                    href={safeLink(cert.url)}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Arrow />
+                  </a>
+                )}
               </article>
             ))}
           </div>
+          <a className="chapter-next" href="#contact">
+            <span>THE NEXT PAGE</span>Some things are better built together.
+            <span>↓</span>
+          </a>
         </section>
-        <section id="contact" className="contact wrap">
-          <p className="eyebrow">05 / WHAT’S NEXT?</p>
-          <h2>
-            Good things start
-            <br />
-            with a <em>hello.</em>
-          </h2>
-          <div>
-            <p>
-              Have an idea, an opportunity,
-              <br />
-              or just something interesting to share?
-            </p>
-            <a className="button primary" href={`mailto:${profile.email}`}>
-              Let’s make it happen <Arrow />
-            </a>
-            <a className="email" href={`mailto:${profile.email}`}>
-              {profile.email}
-            </a>
+        <section id="contact" className="contact-section">
+          <div className="wrap contact">
+            <p className="eyebrow">05 — THIS PAGE IS STILL UNWRITTEN</p>
+            <div className="contact-title">
+              <h2>
+                What’s
+                <br />
+                <em>next?</em>
+              </h2>
+              <span className="contact-spark" aria-hidden="true">
+                ↗
+              </span>
+            </div>
+            <div className="contact-bottom">
+              <p>
+                An interesting problem. A new opportunity.
+                <br />
+                Or a conversation that leads somewhere.
+              </p>
+              <div>
+                <a className="button primary" href={`mailto:${profile.email}`}>
+                  Let’s talk <Arrow />
+                </a>
+                <a className="email" href={`mailto:${profile.email}`}>
+                  {profile.email}
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -321,7 +409,7 @@ function App() {
           </a>
           <button onClick={() => setEditing(true)}>Edit content</button>
         </div>
-        <a href="#home">Back to top ↑</a>
+        <a href="#home">Back to the beginning ↑</a>
       </footer>
       {editing && (
         <Editor
