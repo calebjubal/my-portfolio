@@ -3,6 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 import StoryNavigation from "./StoryNavigation";
 import content from "./content.json";
 import Editor from "./Editor";
+import Header from "./Header";
 import ContactActions from "./ContactActions";
 import Icon from "./Icon";
 import SvgText, { StarMark, ArrowMark } from "./SvgText";
@@ -29,23 +30,7 @@ function App() {
       <a className="skip" href="#main">
         Skip to content
       </a>
-      <header className="header wrap">
-        <a className="brand" href="#home" aria-label="Caleb home">
-          CC<span>+</span>
-        </a>
-        <span className="header-caption">
-          A PERSONAL FIELD GUIDE
-          <br />
-          TO THINGS I BUILD.
-        </span>
-        <nav aria-label="Main navigation">
-          <a href="#work">Selected work</a>
-          <a href="#experience">The journey</a>
-          <a href="#contact">
-            Get in touch <Arrow />
-          </a>
-        </nav>
-      </header>
+      <Header />
       <StoryNavigation
         revision={`${category}:${query}:${projects.length}:${certificates.length}:${experience.length}`}
       />
@@ -79,11 +64,7 @@ function App() {
               href="#work"
               aria-label="Explore selected work"
             >
-              <span>
-                SCROLL TO
-                <br />
-                EXPLORE
-              </span>
+              <span>Explore selected work</span>
               <span aria-hidden="true">
                 <Icon name="ArrowDown" />
               </span>

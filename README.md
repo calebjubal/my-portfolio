@@ -48,3 +48,7 @@ Lucide also provides interface icons for navigation, search, résumé and projec
 ## Contact email
 
 “Let’s talk” uses a mailto compose link with the current profile email and a prefilled subject. The browser/OS opens its configured email handler, including Gmail where registered, otherwise the default mail app. “Open in Gmail” is a direct web compose alternative, opening in a new tab. Both open drafts; visitors review and send themselves. The website does not inspect installed apps, Google sign-in state, or send messages.
+
+## Mobile layout
+
+Phones use an expandable, labeled navigation menu; Escape closes it and returns focus to the toggle. Text and editor inputs stay readable, contact actions stack, and compact grids become a single-column reading flow. The content studio uses the dynamic viewport height, locks background scrolling while open, and keeps its close control visible. Long editable titles, emails, and credentials wrap without hiding horizontal overflow.
