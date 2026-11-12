@@ -1,6 +1,6 @@
 # Caleb's portfolio
 
-A dark, chapter-based React portfolio with maroon, red, and gold accents, bold typography, projects, experience, certificates, and a browser-based content studio.
+An editorial field-notes portfolio with an ink-and-ivory foundation, pale blue technical accents, muted gold navigation, and a maroon contact section. See [DESIGN.md](DESIGN.md) for palette comparisons, placement decisions, measured text contrast, and sources.
 
 ## Run locally
 
@@ -13,7 +13,7 @@ Production build: `npm run build`. Tests: `npm test -- --watchAll=false`.
 
 ## Story and motion
 
-Five chapters guide the visitor from the introduction through projects, work experience, credentials, and contact. Desktop chapter links and a compact reading indicator track progress without taking over normal scrolling. Native Web Animations provide staggered intro and on-scroll reveals; CSS handles the rotating star, floating note, and hover feedback. Motion respects the system reduced-motion setting, including changes during a visit. Content stays readable when animation APIs are unavailable. Observers, listeners, and animations are cleaned up on unmount.
+Five chapters guide visitors from the masthead through projects, work experience, credentials, and contact. A desktop chapter navigator and reading progress bar follow normal scrolling. Native Web Animations provide staged intro and on-scroll reveals; CSS adds restrained screenshot and control hover feedback. Motion respects system reduced-motion preferences, including changes during a visit. Content stays readable when animation APIs are unavailable. Observers, listeners, and animations are cleaned up on unmount.
 
 ## Update your portfolio
 
