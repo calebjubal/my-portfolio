@@ -1504,3 +1504,72 @@ h2 {
     font-size: 9px;
   }
 }
+/* Social glyphs share Lucide's outline weight and retain visible link labels. */
+.social-icon {
+  display: inline-block;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  color: currentColor;
+}
+.text-link:has(.social-icon) {
+  gap: 10px;
+}
+footer > div > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+footer > div {
+  flex-wrap: wrap;
+  row-gap: 14px;
+}
+/* Shared Lucide sizing for interface actions. */
+.ui-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.text-link:has(.ui-icon) {
+  gap: 10px;
+}
+footer button,
+footer > a,
+.editor .remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.editor .button {
+  gap: 10px;
+}
+.editor-top > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+}
+.search > .ui-icon {
+  color: var(--muted);
+}
+.round-link > span:last-child {
+  line-height: 0;
+}
+.round-link .ui-icon {
+  width: 24px;
+  height: 24px;
+}
+.chapter-next > span:last-child {
+  display: flex;
+  align-items: center;
+}
+.contact-spark .ui-icon {
+  width: 1em;
+  height: 1em;
+  stroke-width: 0.8;
+}
+.editor .editor-actions .button{flex:1 1 160px;min-width:min(100%,160px);white-space:normal;line-height:1.5;justify-content:center}

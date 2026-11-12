@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
+import { Asterisk, ArrowUpRight } from "lucide-react";
 
 // Measure natural glyph bounds; the viewBox scales without stretching letters.
 export default function SvgText({ text, className = "", weight = 800 }) {
@@ -74,26 +75,18 @@ export default function SvgText({ text, className = "", weight = 800 }) {
 }
 export function StarMark() {
   return (
-    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-      <g stroke="currentColor" strokeWidth="3" fill="none">
-        <path d="M50 2v96M2 50h96M16 16l68 68M16 84l68-68" />
-      </g>
-    </svg>
+    <Asterisk
+      size={100}
+      strokeWidth={0.8}
+      aria-hidden="true"
+      focusable="false"
+    />
   );
 }
 export function ArrowMark() {
   return (
     <span aria-hidden="true" className="arrow-mark">
-      <svg viewBox="0 0 24 24" focusable="false">
-        <path
-          d="M5 19 19 5M5 5h14v14"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <ArrowUpRight size={18} strokeWidth={1.7} focusable="false" />
     </span>
   );
 }

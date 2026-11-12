@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Github, Linkedin } from "lucide-react";
 import StoryNavigation from "./StoryNavigation";
 import content from "./content.json";
 import Editor from "./Editor";
+import Icon from "./Icon";
 import SvgText, { StarMark, ArrowMark } from "./SvgText";
 import "./App.css";
 export const safeLink = (value) =>
@@ -81,7 +83,9 @@ function App() {
                 <br />
                 EXPLORE
               </span>
-              <span aria-hidden="true">↓</span>
+              <span aria-hidden="true">
+                <Icon name="ArrowDown" />
+              </span>
             </a>
           </div>
           <div className="intro-board">
@@ -105,7 +109,7 @@ function App() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Read my résumé <Arrow />
+                    <Icon name="FileText" /> Read my résumé
                   </a>
                 )}
                 <a
@@ -114,6 +118,12 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                 >
+                  <Github
+                    className="social-icon"
+                    size={18}
+                    strokeWidth={1.7}
+                    aria-hidden="true"
+                  />{" "}
                   Inside my GitHub <Arrow />
                 </a>
               </div>
@@ -172,7 +182,7 @@ function App() {
               ))}
             </div>
             <label className="search">
-              <span aria-hidden="true">⌕</span>
+              <Icon name="Search" />
               <input
                 aria-label="Search projects"
                 placeholder="Search the index"
@@ -232,7 +242,7 @@ function App() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Visit project <Arrow />
+                        Visit project <Icon name="ExternalLink" />
                       </a>
                     )}
                     {safeLink(p.github) && (
@@ -242,7 +252,7 @@ function App() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        View source <Arrow />
+                        <Icon name="Code2" /> View source
                       </a>
                     )}
                   </div>
@@ -257,7 +267,9 @@ function App() {
           )}
           <a className="chapter-next" href="#experience">
             <span>THE NEXT PAGE</span>What happens beyond the code?
-            <span>↓</span>
+            <span>
+              <Icon name="ArrowDown" />
+            </span>
           </a>
         </section>
         <section id="experience" className="experience-section">
@@ -284,6 +296,12 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                 >
+                  <Linkedin
+                    className="social-icon"
+                    size={18}
+                    strokeWidth={1.7}
+                    aria-hidden="true"
+                  />{" "}
                   The full story on LinkedIn <Arrow />
                 </a>
               </div>
@@ -362,7 +380,9 @@ function App() {
           </div>
           <a className="chapter-next" href="#contact">
             <span>THE NEXT PAGE</span>Some things are better built together.
-            <span>↓</span>
+            <span>
+              <Icon name="ArrowDown" />
+            </span>
           </a>
         </section>
         <section id="contact" className="contact-section">
@@ -375,7 +395,7 @@ function App() {
                 <em>next?</em>
               </h2>
               <span className="contact-spark" aria-hidden="true">
-                ↗
+                <Icon name="ArrowUpRight" />
               </span>
             </div>
             <div className="contact-bottom">
@@ -386,7 +406,7 @@ function App() {
               </p>
               <div>
                 <a className="button primary" href={`mailto:${profile.email}`}>
-                  Let’s talk <Arrow />
+                  Let’s talk <Icon name="Mail" />
                 </a>
                 <a className="email" href={`mailto:${profile.email}`}>
                   {profile.email}
@@ -402,14 +422,30 @@ function App() {
         </span>
         <div>
           <a href={safeLink(profile.github)} target="_blank" rel="noreferrer">
+            <Github
+              className="social-icon"
+              size={18}
+              strokeWidth={1.7}
+              aria-hidden="true"
+            />{" "}
             GitHub <Arrow />
           </a>
           <a href={safeLink(profile.linkedin)} target="_blank" rel="noreferrer">
+            <Linkedin
+              className="social-icon"
+              size={18}
+              strokeWidth={1.7}
+              aria-hidden="true"
+            />{" "}
             LinkedIn <Arrow />
           </a>
-          <button onClick={() => setEditing(true)}>Edit content</button>
+          <button onClick={() => setEditing(true)}>
+            <Icon name="PenLine" /> Edit content
+          </button>
         </div>
-        <a href="#home">Back to the beginning ↑</a>
+        <a href="#home">
+          Back to the beginning <Icon name="ArrowUp" />
+        </a>
       </footer>
       {editing && (
         <Editor
