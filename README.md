@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Caleb's portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React portfolio with projects, experience, certificates, and a browser-based content studio.
 
-## Available Scripts
+## Run locally
 
-In the project directory, you can run:
+```sh
+npm ci
+npm start
+```
 
-### `npm start`
+Production build: `npm run build`. Tests: `npm test -- --watchAll=false`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Update your portfolio
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Open **Edit content** in the website footer.
+2. Choose Profile, Projects, Experience, or Certificates. Edit entries or add/remove them.
+3. **Preview on page** shows the changes for this visit. Reopen the editor to continue.
+4. **Save browser draft** keeps work in this browser; **Load draft** restores it. Drafts are not public and do not sync between devices.
+5. **Export content.json** downloads the complete content file.
+6. In GitHub, replace `src/content.json` with the exported file and commit. Your connected Vercel deployment will rebuild when changes reach its production branch.
 
-### `npm test`
+You can also edit `src/content.json` directly in GitHub. No component changes are needed for new entries. Add images and PDF certificates to `public/`, then use paths such as `/new-project.png` or `/certificate.pdf`. For external links, use full `https://` URLs. Leave unknown links empty: the site hides unavailable actions. Add new entries at the top of an array to feature them first.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The content editor is a local drafting tool, not an authenticated CMS: visitors can experiment with their own browser view but cannot change your repository or published portfolio. Closing the editor without previewing discards unsaved form changes; save a browser draft or export first.
 
-### `npm run build`
+## Content provenance and remaining details
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Original three projects, project screenshots, portrait, résumé, and email preserved from the existing repository. Project demo/source URLs were absent and remain blank.
+- Six named certificates and credential IDs transcribed from the public LinkedIn profile at https://in.linkedin.com/in/caleb-chandrasekar. Direct credential URLs were not exposed; add those in the editor when available.
+- Eascode's public company announcement at https://in.linkedin.com/company/eascodesolutions/ confirms a summer internship in 2026 for an LLM migration project. The public profile hides other job titles and dates; no additional roles or dates have been invented.
+- Existing résumé PDF has been retained; review its contents before sharing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deploy
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The existing Create React App build and Vercel compatibility are preserved. Import this repository into Vercel (or use the existing connection), with build command `npm run build` and output directory `build`. Review a preview deployment before merging into the production branch.
