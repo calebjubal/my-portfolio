@@ -2,10 +2,11 @@ import { useState } from "react";
 import StoryNavigation from "./StoryNavigation";
 import content from "./content.json";
 import Editor from "./Editor";
+import SvgText, { StarMark, ArrowMark } from "./SvgText";
 import "./App.css";
 export const safeLink = (value) =>
   /^(https?:\/\/|mailto:|\/[^/])/.test(value || "") ? value : undefined;
-const Arrow = () => <span aria-hidden="true">↗</span>;
+const Arrow = ArrowMark;
 const number = (n) => String(n).padStart(2, "0");
 function App() {
   const [data, setData] = useState(content),
@@ -51,15 +52,17 @@ function App() {
             <p className="eyebrow">PORTFOLIO / VOL. 01</p>
             <p className="eyebrow">{profile.location}</p>
           </div>
-          <h1>
-            <span className="hero-line">
-              {profile.name.split(" ")[0]}
-              <span className="name-star" aria-hidden="true">
-                ✳
+          <h1 className="name-heading" aria-label={profile.name}>
+            <span className="hero-line name-first">
+              <SvgText text={profile.name.split(" ")[0].toUpperCase()} />
+              <span className="name-star">
+                <StarMark />
               </span>
             </span>
             <span className="hero-line surname">
-              {profile.name.split(" ").slice(1).join(" ")}
+              <SvgText
+                text={profile.name.split(" ").slice(1).join(" ").toUpperCase()}
+              />
             </span>
           </h1>
           <div className="hero-bottom">

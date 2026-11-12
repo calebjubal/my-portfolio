@@ -1234,3 +1234,273 @@ footer button:hover {
 .story-nav.paper-chapter [aria-current] .chapter-dot {
   background: var(--wine);
 }
+/* Natural-width SVG display lettering; body copy remains selectable HTML. */
+.name-heading {
+  margin: 40px 0 25px;
+  font-size: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.name-first {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4vw, 65px);
+  position: static;
+}
+.svg-text {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  flex-shrink: 1;
+}
+.name-first > .svg-text {
+  width: 67%;
+  max-width: 800px;
+}
+.name-first .name-star {
+  position: static;
+  display: block;
+  width: 9%;
+  max-width: 110px;
+  margin: 0;
+  line-height: 0;
+  flex-shrink: 0;
+}
+.name-star svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.name-heading .surname {
+  margin-top: 18px;
+  font-size: inherit;
+  letter-spacing: normal;
+  overflow-wrap: normal;
+  max-width: 100%;
+}
+.arrow-mark {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.arrow-mark svg {
+  width: 1.1em;
+  height: 1.1em;
+  display: block;
+}
+.header-caption,
+.eyebrow,
+.index-label,
+.paper-label,
+.paper-footer,
+.cert-index,
+.cert-date,
+.project-category,
+.image-caption {
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+}
+.header nav {
+  font-size: 14px;
+}
+.hero-description,
+.muted {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.text-link {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.bio-note {
+  font-size: 11px;
+}
+.portrait figcaption {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+.skill-strip .eyebrow,
+.skill-strip .wrap > div {
+  font-size: 12px;
+}
+.project dt {
+  font-size: 11px;
+}
+.project dd {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.credential {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.cert-date {
+  font-size: 12px;
+}
+.filters button,
+.search input {
+  font-size: 13px;
+}
+.button {
+  font-size: 14px;
+}
+.email,
+footer {
+  font-size: 12px;
+}
+h2 {
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+.project h3 {
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
+.certificate h3 {
+  font-size: 20px;
+  line-height: 1.45;
+}
+.chapter-next {
+  line-height: 1.7;
+}
+@media (max-width: 700px) {
+  .name-heading {
+    margin: 30px 0 20px;
+    font-size: inherit;
+  }
+  .name-first > .svg-text {
+    width: 73%;
+  }
+  .name-first .name-star {
+    width: 13%;
+    max-width: 60px;
+  }
+  .name-heading .surname {
+    margin-top: 12px;
+    font-size: inherit;
+  }
+  .header nav {
+    font-size: 11px;
+    gap: 14px;
+  }
+  .eyebrow,
+  .hero-top .eyebrow,
+  .index-label,
+  .paper-label,
+  .paper-footer,
+  .project-category {
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+  }
+  .hero-description,
+  .muted,
+  .project-copy > .muted {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .intro {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .intro span {
+    font-size: 14px;
+  }
+  .actions .text-link,
+  .text-link {
+    font-size: 13px;
+  }
+  .bio-note {
+    font-size: 10px;
+  }
+  .portrait figcaption {
+    font-size: 9px;
+  }
+  .skill-strip .eyebrow,
+  .skill-strip .wrap > div {
+    font-size: 11px;
+  }
+  .project dt {
+    font-size: 10px;
+  }
+  .project dd {
+    font-size: 13px;
+  }
+  .filters button,
+  .search input {
+    font-size: 12px;
+  }
+  .credential {
+    font-size: 11px;
+  }
+  .cert-date {
+    font-size: 11px;
+  }
+  .certificate h3 {
+    font-size: 18px;
+  }
+  .chapter-next {
+    font-size: 13px;
+  }
+  .chapter-next span:first-child {
+    font-size: 10px;
+  }
+  .contact-bottom p {
+    font-size: 15px;
+  }
+  .email,
+  footer {
+    font-size: 11px;
+  }
+  .paper-footer {
+    font-size: 10px;
+  }
+  .experience-top .eyebrow {
+    font-size: 10px;
+  }
+  .board-statement h2 {
+    font-size: 33px;
+    line-height: 1.15;
+  }
+  .intro-board {
+    grid-template-columns: minmax(0, 1fr) 105px;
+  }
+}
+@media (max-width: 360px) {
+  .header nav {
+    font-size: 10px;
+    gap: 10px;
+  }
+  .header {
+    gap: 12px;
+  }
+  .wrap {
+    padding-inline: 20px;
+  }
+  .intro-board {
+    grid-template-columns: 1fr;
+  }
+  .portrait {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 18px;
+    align-items: end;
+  }
+  .portrait img {
+    height: 130px;
+  }
+  .portrait figcaption {
+    max-width: 150px;
+  }
+  .hero-bottom {
+    gap: 15px;
+  }
+  .hero-top .eyebrow {
+    font-size: 9px;
+  }
+}

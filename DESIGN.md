@@ -51,3 +51,7 @@ The new design replaces the previous hero/card layout and accumulated palette ov
 - [W3C: Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum/) — 4.5:1 for normal text and 3:1 for large text.
 - [W3C: Use of Color](https://www.w3.org/TR/2023/REC-WCAG22-20231005/#use-of-color) — color is not the only way information is conveyed.
 - [W3C: Colors with Good Contrast](https://www.w3.org/WAI/perspectives/contrast.html) — evaluate contrast while selecting the palette.
+
+## SVG typography
+
+The name masthead uses live SVG text with a measured viewBox and preserved aspect ratio. Canvas glyph-ink metrics remove excess line-box whitespace where supported, with SVG bounds as fallback. Letters scale naturally without textLength distortion. Name edits still come from content.json; the enclosing h1 supplies the accessible name and decorative SVGs are hidden from assistive technology. Star and arrow marks use SVG geometry. Body copy, labels, and credentials stay in selectable HTML with a larger responsive type scale.
