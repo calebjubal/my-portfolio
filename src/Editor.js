@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Icon from "./Icon";
 const fields = {
   projects: [
     "title",
@@ -95,7 +96,7 @@ export default function Editor({ data, onPreview, onClose }) {
           </h2>
         </div>
         <button aria-label="Close content editor" onClick={onClose}>
-          ✕
+          <Icon name="X" />
         </button>
       </div>
       <p className="editor-help">
@@ -161,7 +162,7 @@ export default function Editor({ data, onPreview, onClose }) {
               })
             }
           >
-            + Add{" "}
+            <Icon name="Plus" /> Add{" "}
             {tab === "experience"
               ? "job"
               : tab === "projects"
@@ -198,7 +199,7 @@ export default function Editor({ data, onPreview, onClose }) {
                   })
                 }
               >
-                Remove entry
+                <Icon name="Trash2" /> Remove entry
               </button>
             </fieldset>
           ))}
@@ -213,16 +214,16 @@ export default function Editor({ data, onPreview, onClose }) {
             onClose();
           }}
         >
-          Preview on page
+          <Icon name="Eye" /> Preview on page
         </button>
         <button className="button" onClick={saveDraft}>
-          Save browser draft
+          <Icon name="Save" /> Save browser draft
         </button>
         <button className="button" onClick={loadDraft}>
-          Load draft
+          <Icon name="FolderOpen" /> Load draft
         </button>
         <button className="button" onClick={exportContent}>
-          Export content.json ↓
+          <Icon name="Download" /> Export content.json
         </button>
       </div>
     </dialog>

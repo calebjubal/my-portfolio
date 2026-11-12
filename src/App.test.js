@@ -24,7 +24,7 @@ test("edits and previews a job, persists a draft, and restores it", () => {
   render(<App />);
   fireEvent.click(screen.getByRole("button", { name: "Edit content" }));
   fireEvent.click(screen.getByRole("button", { name: "experience" }));
-  fireEvent.click(screen.getByRole("button", { name: "+ Add job" }));
+  fireEvent.click(screen.getByRole("button", { name: "Add job" }));
   const title = screen.getAllByLabelText("title")[1];
   fireEvent.change(title, { target: { value: "New role" } });
   fireEvent.click(screen.getByRole("button", { name: "Save browser draft" }));
