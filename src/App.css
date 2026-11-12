@@ -1504,3 +1504,8 @@ h2 {
     font-size: 9px;
   }
 }
+/* Social glyphs share Lucide's outline weight and retain visible link labels. */
+.social-icon{display:inline-block;flex:0 0 18px;width:18px;height:18px;vertical-align:middle;color:currentColor}
+.text-link:has(.social-icon){gap:10px}
+footer>div>a{display:inline-flex;align-items:center;gap:8px}
+footer>div{flex-wrap:wrap;row-gap:14px}

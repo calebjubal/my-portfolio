@@ -38,3 +38,7 @@ The content editor is a local drafting tool, not an authenticated CMS: visitors 
 ## Deploy
 
 The existing Create React App build and Vercel compatibility are preserved. Import this repository into Vercel (or use the existing connection), with build command `npm run build` and output directory `build`. Review a preview deployment before merging into the production branch.
+
+## Social icons
+
+GitHub and LinkedIn links use named Lucide React imports with visible text labels; icons are decorative for screen readers. `lucide-react` is pinned to 0.468.0 because current 1.x releases removed brand logos. Review social icon imports before upgrading that dependency.

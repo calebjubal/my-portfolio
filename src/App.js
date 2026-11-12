@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Github, Linkedin } from "lucide-react";
 import StoryNavigation from "./StoryNavigation";
 import content from "./content.json";
 import Editor from "./Editor";
@@ -114,7 +115,7 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Inside my GitHub <Arrow />
+                  <Github className="social-icon" size={18} strokeWidth={1.7} aria-hidden="true" /> Inside my GitHub <Arrow />
                 </a>
               </div>
               <p className="bio-note">
@@ -284,7 +285,7 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  The full story on LinkedIn <Arrow />
+                  <Linkedin className="social-icon" size={18} strokeWidth={1.7} aria-hidden="true" /> The full story on LinkedIn <Arrow />
                 </a>
               </div>
               <div className="timeline">
@@ -402,10 +403,10 @@ function App() {
         </span>
         <div>
           <a href={safeLink(profile.github)} target="_blank" rel="noreferrer">
-            GitHub <Arrow />
+            <Github className="social-icon" size={18} strokeWidth={1.7} aria-hidden="true" /> GitHub <Arrow />
           </a>
           <a href={safeLink(profile.linkedin)} target="_blank" rel="noreferrer">
-            LinkedIn <Arrow />
+            <Linkedin className="social-icon" size={18} strokeWidth={1.7} aria-hidden="true" /> LinkedIn <Arrow />
           </a>
           <button onClick={() => setEditing(true)}>Edit content</button>
         </div>
