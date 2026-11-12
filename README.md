@@ -1,6 +1,6 @@
 # Caleb's portfolio
 
-A responsive React portfolio with projects, experience, certificates, and a browser-based content studio.
+A dark, chapter-based React portfolio with electric lime and violet accents, bold typography, projects, experience, certificates, and a browser-based content studio.
 
 ## Run locally
 
@@ -10,6 +10,10 @@ npm start
 ```
 
 Production build: `npm run build`. Tests: `npm test -- --watchAll=false`.
+
+## Story and motion
+
+Five chapters guide the visitor from the introduction through projects, work experience, credentials, and contact. Desktop chapter links and a compact reading indicator track progress without taking over normal scrolling. Native Web Animations provide staggered intro and on-scroll reveals; CSS handles the rotating star, floating note, and hover feedback. Motion respects the system reduced-motion setting, including changes during a visit. Content stays readable when animation APIs are unavailable. Observers, listeners, and animations are cleaned up on unmount.
 
 ## Update your portfolio
 

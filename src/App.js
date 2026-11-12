@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StoryNavigation from "./StoryNavigation";
 import content from "./content.json";
 import Editor from "./Editor";
 import "./App.css";
@@ -36,24 +37,26 @@ function App() {
           Let’s talk <Arrow />
         </a>
       </header>
+      <StoryNavigation revision={`${category}:${query}:${projects.length}:${certificates.length}:${experience.length}`} />
       <main id="main">
         <section id="home" className="hero wrap">
           <div>
             <p className="eyebrow">
               <span className="dot" />
-              {profile.location} · Building with purpose
+              {profile.location} · Student mindset. Builder energy.
             </p>
             <h1>
-              A little curiosity.
-              <br />A lot of <em>possibility.</em>
+              <span className="hero-line">Curious mind.</span>
+              <span className="hero-line">Restless <em>builder.</em></span>
             </h1>
             <p className="intro">
-              Hey, I’m {profile.name.split(" ")[0]} — {profile.role}.
+              I’m {profile.name.split(" ")[0]}. {profile.role}.
+              Still learning. Already making things happen.
             </p>
             <p className="muted hero-description">{profile.intro}</p>
             <div className="actions">
               <a className="button primary" href="#work">
-                Explore my work ↓
+                Start the story ↓
               </a>
               {safeLink(profile.resume) && (
                 <a
@@ -67,32 +70,32 @@ function App() {
               )}
             </div>
             <div className="hero-note">
-              <span>01 / THE INTRODUCTION</span>
-              <span>Code with care. Create with intent.</span>
+              <span>CHAPTER 01 / THE SPARK</span>
+              <span>Scroll to see where curiosity goes.</span>
             </div>
           </div>
           <div className="portrait-area">
             <div className="orbit" aria-hidden="true" />
             <div className="portrait-frame">
               <img src={safeLink(profile.portrait)} alt={profile.name} />
-              <span className="photo-label">THE HUMAN BEHIND THE CODE</span>
+              <span className="photo-label">CALEB / A WORK IN PROGRESS</span>
             </div>
             <div className="floating-note">
               <span aria-hidden="true">✳</span>
               <div>
-                Always learning.
+                Ideas → experiments.
                 <br />
-                <strong>Always building.</strong>
+                <strong>Experiments → real things.</strong>
               </div>
             </div>
             <span className="portrait-index" aria-hidden="true">
-              &lt; hello, world /&gt;
+              &lt; building_my_next_chapter /&gt;
             </span>
           </div>
         </section>
         <div className="skill-strip">
           <div className="wrap">
-            <span className="eyebrow">MY TOOLKIT</span>
+            <span className="eyebrow">THE EXPERIMENT KIT</span>
             <div>
               {skills.filter(Boolean).map((skill) => (
                 <span key={skill}>{skill}</span>
@@ -103,15 +106,15 @@ function App() {
         <section id="work" className="section wrap">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">02 / SELECTED WORK</p>
+              <p className="eyebrow">CHAPTER 02 / THE EXPERIMENTS</p>
               <h2>
-                Ideas, brought to life<span>.</span>
+                Less “what if.” More “built it”<span>.</span>
               </h2>
             </div>
             <p className="muted">
-              A collection of things I’ve built,
+              An idea becomes a late-night experiment.
               <br />
-              explored, and learned along the way.
+              Then it becomes something you can use.
             </p>
           </div>
           <div className="work-controls">
@@ -194,19 +197,20 @@ function App() {
             </p>
           )}
         </section>
+        <div className="wrap"><a className="chapter-next" href="#experience"><span>02 → 03</span> Taking it beyond the screen <span>↓</span></a></div>
         <section id="experience" className="experience-section">
           <div className="wrap experience-layout">
             <div>
-              <p className="eyebrow">03 / THE JOURNEY</p>
+              <p className="eyebrow">CHAPTER 03 / OUTSIDE THE CLASSROOM</p>
               <h2>
-                Learning by
+                Real teams.
                 <br />
-                <em>doing.</em>
+                <em>Real learning.</em>
               </h2>
               <p className="muted">
-                Real teams. New challenges.
+                Taking the experiments into the real world.
                 <br />
-                Room to grow with every step.
+                Learning from people, problems, and the process.
               </p>
               <a
                 className="text-link"
@@ -245,12 +249,13 @@ function App() {
             </div>
           </div>
         </section>
+        <div className="wrap"><a className="chapter-next" href="#certificates"><span>03 → 04</span> There’s always another level <span>↓</span></a></div>
         <section id="certificates" className="section wrap">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">04 / NEVER STOP LEARNING</p>
+              <p className="eyebrow">CHAPTER 04 / LEVELING UP</p>
               <h2>
-                Curiosity, with credentials<span>.</span>
+                The learning never logs off<span>.</span>
               </h2>
             </div>
             <span className="count">
@@ -286,12 +291,13 @@ function App() {
             ))}
           </div>
         </section>
+        <div className="wrap"><a className="chapter-next" href="#contact"><span>04 → 05</span> This is where you come in <span>↓</span></a></div>
         <section id="contact" className="contact wrap">
-          <p className="eyebrow">05 / WHAT’S NEXT?</p>
+          <p className="eyebrow">CHAPTER 05 / THE NEXT CHAPTER</p>
           <h2>
-            Good things start
+            The next cool thing?
             <br />
-            with a <em>hello.</em>
+            <em>Let’s build it.</em>
           </h2>
           <div>
             <p>
@@ -300,7 +306,7 @@ function App() {
               or just something interesting to share?
             </p>
             <a className="button primary" href={`mailto:${profile.email}`}>
-              Let’s make it happen <Arrow />
+              Say hello <Arrow />
             </a>
             <a className="email" href={`mailto:${profile.email}`}>
               {profile.email}
